@@ -1,0 +1,67 @@
+p {
+  font-family: Lato;
+}
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 98vh;
+  margin: 0;
+  background-color: #333650;
+}
+.container {
+  background-color: #f6bdbd;
+  padding: 90px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.for,
+.for2 {
+  display: flex;
+  align-items: center;
+}
+.for {
+  margin-left: -30px;
+}
+.for-block,
+.in-block {
+  margin-right: 10px;
+  padding: 0 10px;
+}
+.if {
+  margin-left: 30px;
+}
+.if2 {
+  margin-left: 60px;
+  margin-top: -15px;
+}
+.else {
+  margin-left: 70px;
+  margin-top: 25px;
+}
+.if,
+.if2 {
+  margin-right: 10px;
+  padding: 0 10px;
+}
+.dropdown-margin {
+  margin-left: 30px;
+}
+.operator {
+  padding: 10px;
+  width: 70px;
+}
+.then-print {
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+  padding: 20px;
+}
+.cheapest-price {
+  margin-left: 10px;
+  color: #333650;
+  background-color: aliceblue;
+  padding: 8px;
+  width: auto;
+  border-radius: 8px;
+}

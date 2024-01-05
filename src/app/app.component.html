@@ -1,0 +1,143 @@
+<div class="body">
+  <div class="container">
+    <div class="listitems">
+      <div class="for" [formGroup]="forForm">
+        <section class="for-block">
+          <button mat-raised-button color="primary">For</button>
+          <mat-form-field class="dropdown-margin">
+            <mat-select
+              placeholder="select column"
+              formControlName="forSelect"
+              (valueChange)="onForSelectChange($event)"
+            >
+              <mat-option value="prices">Prices</mat-option>
+              <mat-option value="products">Products</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>
+        <section class="in-block">
+          <button color="primary">In</button>
+          <mat-form-field class="dropdown-margin">
+            <mat-select placeholder="Select list">
+              <mat-option value="shop1">shop1</mat-option>
+              <mat-option value="shop2">shop2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>
+      </div>
+      <div class="for2" [formGroup]="for2Form">
+        <section class="for-block">
+          <button mat-raised-button color="primary">For</button>
+          <mat-form-field class="dropdown-margin">
+            <mat-select
+              placeholder="select column"
+              formControlName="for2Select"
+            >
+              <mat-option value="prices">Prices</mat-option>
+              <mat-option value="products">Products</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>
+        <section class="in-block">
+          <button color="basic">In</button>
+          <mat-form-field class="dropdown-margin">
+            <mat-select placeholder="select list">
+              <mat-option value="shop1">shop1</mat-option>
+              <mat-option value="shop2">shop2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>
+      </div>
+      <div class="if" [formGroup]="ifForm">
+        <button mat-raised-button color="primary">If</button>
+        <mat-form-field class="dropdown-margin">
+          <mat-select
+            placeholder="shop1.column"
+            formControlName="ifSelect"
+            (valueChange)="onFirstDropdownChange()"
+          >
+            <mat-option *ngFor="let option of getIfDropdown()" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="operator">
+          <mat-select placeholder="Operator" formControlName="operator">
+            <!-- <mat-option value="=">=</mat-option>
+            <mat-option value="<"><</mat-option>
+            <mat-option value=">">></mat-option>
+            <mat-option value="!=">!=</mat-option>
+            <mat-option value="<="><=</mat-option>
+            <mat-option value=">">>=</mat-option> -->
+            <mat-option
+              *ngFor="let operatorOption of getOperatorOptions()"
+              [value]="operatorOption.value"
+            >
+              {{ operatorOption.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="dropdown-margin">
+          <mat-select
+            placeholder="shop2.column"
+            formControlName="secondDropdown"
+          >
+            <mat-option
+              *ngFor="let option of getIfSecondDropdown()"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="if2" [formGroup]="if2Form">
+        <button mat-raised-button color="primary">If</button>
+        <mat-form-field class="dropdown-margin">
+          <mat-select placeholder="shop1.column" formControlName="if2Select">
+            <mat-option
+              *ngFor="let option of getIf2Dropdown()"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="operator">
+          <mat-select placeholder="Operator">
+            <mat-option value="=">=</mat-option>
+            <mat-option value="<"><</mat-option>
+            <mat-option value=">">></mat-option>
+            <mat-option value="!=">!=</mat-option>
+            <mat-option value="<="><=</mat-option>
+            <mat-option value=">">>=</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="dropdown-margin">
+          <mat-select placeholder="shop2.column" formControlName="if22Select">
+            <mat-option
+              *ngFor="let option of getIf2secondDropdown()"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="then-print">
+        <div class="print">
+          <button mat-raised-button color="warn" (click)="printCheapestPrice()">
+            print
+          </button>
+        </div>
+        <div *ngIf="cheapestPrice !== undefined" class="cheapest-price">
+          Cheapest Price: {{ cheapestPrice }}
+        </div>
+      </div>
+    </div>
+    <div class="else">
+      <button mat-raised-button color="primary">Else</button>
+    </div>
+  </div>
+</div>
